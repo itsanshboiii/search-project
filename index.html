@@ -1,24 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social Media Search</title>
+    <title>IntelliSearch</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
+        <div class="theme-switch-wrapper">
+            <label class="theme-switch" for="checkbox">
+                <input type="checkbox" id="checkbox">
+                <div class="slider"></div>
+            </label>
+        </div>
         <div class="search-box">
-            <input type="text" id="searchInput" placeholder="Enter search term...">
-            <select id="platformSelect">
-                <option value="youtube">YouTube</option>
-                <option value="reddit">Reddit</option>
-                <option value="giphy">Giphy</option>
-            </select>
-            <button onclick="performSearch()">Search</button>
+            <h1>IntelliSearch</h1>
+            <div class="search-input">
+                <input type="text" id="searchInput" placeholder="What are you looking for?">
+            </div>
+            <div class="platform-buttons" id="platformButtons">
+                <button class="platform-button" data-platform="youtube" onclick="selectPlatform('youtube')">
+                    YouTube
+                </button>
+                <button class="platform-button" data-platform="reddit" onclick="selectPlatform('reddit')">
+                    Reddit
+                </button>
+                <button class="platform-button" data-platform="giphy" onclick="selectPlatform('giphy')">
+                    Giphy
+                </button>
+            </div>
+            <button class="search-button" onclick="performSearch()">
+                <span>Search</span>
+            </button>
         </div>
         <div class="results" id="results"></div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
